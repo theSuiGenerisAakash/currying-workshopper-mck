@@ -14,4 +14,7 @@ describe('testing identity function', () => {
   it('testing with a number', () => {
     expect(identity(32)).toBe(32);
   });
+  it('testing with an object', () => {
+    expect(identity({})).toEqual({});
+  });
 });
