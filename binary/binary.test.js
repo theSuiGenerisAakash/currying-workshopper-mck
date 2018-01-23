@@ -13,13 +13,13 @@ describe('Testing sum function in binary.js', () => {
     const result = NaN;
     expect(binary(first, second)).toBe(result);
   });
-  it('testing with -2 and {}', () => {
+  it('testing with number and {}', () => {
     const first = -2;
     const second = {};
     const result = NaN;
     expect(binary(first, second)).toBe(result);
   });
-  it('testing with -2 and {}', () => {
+  it('testing with -ve and +ve numbers', () => {
     const first = -2;
     const second = 3273;
     const result = 3271;
