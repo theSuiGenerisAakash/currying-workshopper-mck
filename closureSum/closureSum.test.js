@@ -13,4 +13,16 @@ describe('Testing closure function', () => {
     const result = NaN;
     expect(closureSum(testNum)(testClosureNum)).toBe(result);
   });
+  it('testing with a null and undefined', () => {
+    const testNum = null;
+    const testClosureNum = undefined;
+    const result = NaN;
+    expect(closureSum(testNum)(testClosureNum)).toBe(result);
+  });
+  it('testing with a {} and {}', () => {
+    const testNum = {};
+    const testClosureNum = {};
+    const result = NaN;
+    expect(closureSum(testNum)(testClosureNum)).toBe(result);
+  });
 });

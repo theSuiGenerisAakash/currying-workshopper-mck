@@ -1,1 +1,1 @@
-module.exports = num => anotherNum => num + anotherNum;
+module.exports = num => anotherNum => (typeof num === 'number' && typeof anotherNum === 'number' ? num + anotherNum : NaN);
