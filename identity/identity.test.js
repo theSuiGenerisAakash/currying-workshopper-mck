@@ -5,4 +5,7 @@ describe('testing identity function', () => {
     const strTest = 'I am Aakash';
     expect(identity(strTest)).toBe('I am Aakash');
   });
+  it('testing with undefined', () => {
+    expect(identity()).toBe(undefined);
+  });
 });
