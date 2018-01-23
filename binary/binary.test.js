@@ -25,4 +25,10 @@ describe('Testing sum function in binary.js', () => {
     const result = 3271;
     expect(binary(first, second)).toBe(result);
   });
+  it('testing with {} and {}', () => {
+    const first = {};
+    const second = {};
+    const result = NaN;
+    expect(binary(first, second)).toBe(result);
+  });
 });
