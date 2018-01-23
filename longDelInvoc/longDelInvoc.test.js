@@ -19,4 +19,10 @@ describe('testing persistent closure function', () => {
     testArr.forEach(a => longDelInvoc(a));
     expect(longDelInvoc()).toBe(result);
   });
+  it('testing with nulls and undefined', () => {
+    const testArr = [2, 3, null, undefined, null];
+    const result = 0;
+    testArr.forEach(a => longDelInvoc(a));
+    expect(longDelInvoc()).toBe(result);
+  });
 });
