@@ -11,4 +11,7 @@ describe('testing identity function', () => {
   it('testing with null', () => {
     expect(identity(null)).toBe(null);
   });
+  it('testing with a number', () => {
+    expect(identity(32)).toBe(32);
+  });
 });
