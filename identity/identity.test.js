@@ -8,4 +8,7 @@ describe('testing identity function', () => {
   it('testing with undefined', () => {
     expect(identity()).toBe(undefined);
   });
+  it('testing with null', () => {
+    expect(identity(null)).toBe(null);
+  });
 });
