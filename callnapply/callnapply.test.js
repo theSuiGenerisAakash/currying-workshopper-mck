@@ -13,4 +13,9 @@ describe('testing call function', () => {
     callnapply.caller(this, outer, name, age, tee);
     expect(outer).toHaveBeenCalledWith(name, age, tee);
   });
+  it('testing with undefined values', () => {
+    const outer = jest.fn(Function.prototype.call()); // blocker
+    callnapply.caller(this, outer);
+    expect(outer).toHaveBeenCalledWith(undefined, undefined, undefined);
+  });
 });
