@@ -25,10 +25,4 @@ describe('testing persistent closure function', () => {
     testArr.forEach(a => longDelInvoc(a));
     expect(longDelInvoc()).toBe(result);
   });
-  it('testing with an empty array', () => {
-    const testArr = [];
-    const result = 0;
-    testArr.forEach(a => longDelInvoc(a));
-    expect(longDelInvoc()).toBe(result);
-  });
 });
