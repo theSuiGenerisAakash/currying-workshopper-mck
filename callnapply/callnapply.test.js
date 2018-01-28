@@ -45,4 +45,11 @@ describe('testing applier function', () => {
     callnapply.applier(this, outer, args);
     expect(outer.apply).toHaveBeenCalledWith(this, args);
   });
+  it('testing Function.prototype.apply as mock function with empty array', () => {
+    const outer = function () {};
+    outer.apply = jest.fn();
+    const args = [];
+    callnapply.applier(this, outer, args);
+    expect(outer.apply).toHaveBeenCalledWith(this, args);
+  });
 });
