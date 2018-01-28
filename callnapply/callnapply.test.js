@@ -1,10 +1,6 @@
 const callnapply = require('./callnapply');
 
 describe('testing call function', () => {
-  it('testing function for return type', () => {
-    const func = jest.fn();
-    expect(typeof callnapply.caller(this, func)).toBe('undefined');
-  });
   it('testing Function.prototype.call as mock function', () => {
     const outer = function () {};
     outer.call = jest.fn();
@@ -31,5 +27,12 @@ describe('testing call function', () => {
     const tee = 'M';
     callnapply.caller(this, outer, name, null, tee);
     expect(outer.call).toHaveBeenCalledWith(this, name, null, tee);
+  });
+  it('testing if passed method actually runs', () => {
+    const outer = jest.fn(() => 'Yes');
+    const name = 'Aakash';
+    const age = 22;
+    const tee = 'M';
+    expect(callnapply.caller(this, outer, name, age, tee)).toBe('Yes');
   });
 });
