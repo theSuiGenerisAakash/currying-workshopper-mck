@@ -59,4 +59,9 @@ describe('testing applier function', () => {
     callnapply.applier(this, outer, args);
     expect(outer.apply).toHaveBeenCalledWith(this, args);
   });
+  it('testing if passed method actually runs', () => {
+    const outer = jest.fn(() => 'Yes');
+    const args = ['Aakash', 22, 'M'];
+    expect(callnapply.applier(this, outer, args)).toBe('Yes');
+  });
 });
