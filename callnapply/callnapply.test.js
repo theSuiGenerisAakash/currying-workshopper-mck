@@ -1,6 +1,6 @@
 const callnapply = require('./callnapply');
 
-describe('testing call function', () => {
+describe('testing caller function', () => {
   it('testing Function.prototype.call as mock function', () => {
     const outer = function () {};
     outer.call = jest.fn();
@@ -34,5 +34,15 @@ describe('testing call function', () => {
     const age = 22;
     const tee = 'M';
     expect(callnapply.caller(this, outer, name, age, tee)).toBe('Yes');
+  });
+});
+
+describe('testing applier function', () => {
+  it('testing Function.prototype.apply as mock function', () => {
+    const outer = function () {};
+    outer.apply = jest.fn();
+    const args = ['Aakash', 22, 'M'];
+    callnapply.applier(this, outer, args);
+    expect(outer.apply).toHaveBeenCalledWith(this, args);
   });
 });
