@@ -14,7 +14,7 @@ describe('testing call function', () => {
     callnapply.caller(this, outer, name, age, tee);
     expect(outer.call).toHaveBeenCalledWith(this, name, age, tee);
   });
-  it('testing Function.prototype.call as mock function', () => {
+  it('testing Function.prototype.call as mock function with undefined', () => {
     const outer = function () {};
     outer.call = jest.fn();
     // const name = 'Aakash';
@@ -22,5 +22,14 @@ describe('testing call function', () => {
     // const tee = 'M';
     callnapply.caller(this, outer);
     expect(outer.call).toHaveBeenCalledWith(this, undefined, undefined, undefined);
+  });
+  it('testing Function.prototype.call as mock function with one of the args as null', () => {
+    const outer = function () { return 'Yes'; };
+    outer.call = jest.fn();
+    const name = 'Aakash';
+    // const age = 22;
+    const tee = 'M';
+    callnapply.caller(this, outer, name, null, tee);
+    expect(outer.call).toHaveBeenCalledWith(this, name, null, tee);
   });
 });
